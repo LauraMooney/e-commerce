@@ -1,14 +1,16 @@
 import { makeStyles, fade } from '@material-ui/core/styles';
+import { CenterFocusStrong } from '@material-ui/icons';
 
 const drawerWidth = 2;
 
 export default makeStyles((theme) => ({
   appBar: {
     boxShadow: 'none',
-    borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
+    borderBottom: '2px solid rgba(0, 0, 0, 0.12)',
     [theme.breakpoints.up('sm')]: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
+     
     },
   },
   title: {
@@ -16,7 +18,7 @@ export default makeStyles((theme) => ({
     alignItems: 'center',
     display: 'flex',
     textDecoration: 'none',
-  },
+    },
   image: {
     marginRight: '10px',
   },
@@ -41,6 +43,7 @@ export default makeStyles((theme) => ({
     width: '100%',
     [theme.breakpoints.up('sm')]: {
       width: 'auto',
+  
     },
   },
   searchIcon: {
@@ -65,4 +68,8 @@ export default makeStyles((theme) => ({
       width: '20ch',
     },
   },
+  h3: {
+    color: '#E7D5D5',
+  },
+
 }));

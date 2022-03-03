@@ -37,6 +37,7 @@ const PrimarySearchAppBar = ({ totalItems }) => {
           <Typography component={Link} to="/" variant="h6" className={classes.title} color="inherit">
             <img src={logo} alt="Tiger Rose Jewellery" height="100px" className={classes.image} /> 
           </Typography>
+         <div className={classes.h3}><h3>Shop Beautiful Handmade Jewellery</h3></div> 
           <div className={classes.grow} />
           {location.pathname === '/' && (
           <div className={classes.button}>

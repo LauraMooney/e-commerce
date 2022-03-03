@@ -10,4 +10,16 @@ export default makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
+  header: {
+    paddingTop: '10px',
+    paddingBottom: '40px',
+    textAlign: 'center',
+    color: '#B0ACAC',
+    width: 'auto',
+  },
+  footer: {
+    paddingTop: '20px',
+    width: '100%',
+    height: 'auto',
+  }
 }));
