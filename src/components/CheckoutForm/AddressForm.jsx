@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { commerce } from '../../lib/commerce';
 import FormInput from './CustomTextField';
 
-const AddressForm = ({ test }) => {
+const AddressForm = ({ checkoutToken, test }) => {
   const [shippingCountries, setShippingCountries] = useState([]);
   const [shippingCountry, setShippingCountry] = useState('');
   const [shippingSubdivisions, setShippingSubdivisions] = useState([]);
@@ -15,8 +15,8 @@ const AddressForm = ({ test }) => {
   const [shippingOption, setShippingOption] = useState('');
   const methods = useForm();
 
-  const fetchShippingCountries = async () => {
-    const { countries } = await commerce.services.localeListShippingCountries();
+  const fetchShippingCountries = async (checkoutTokenId) => {
+    const { countries } = await commerce.services.localeListShippingCountries(checkoutTokenId);
 
     setShippingCountries(countries);
     setShippingCountry(Object.keys(countries)[0]);
@@ -29,15 +29,15 @@ const AddressForm = ({ test }) => {
     setShippingSubdivision(Object.keys(subdivisions)[0]);
   };
 
-  const fetchShippingOptions = async (country, stateProvince = null) => {
-    const options = await commerce.checkout.getShippingOptions({ country, region: stateProvince });
+  const fetchShippingOptions = async (checkoutTokenId, country, stateProvince = null) => {
+    const options = await commerce.checkout.getShippingOptions(checkoutTokenId, { country, region: stateProvince });
 
     setShippingOptions(options);
     setShippingOption(options[0].id);
   };
 
   useEffect(() => {
-    fetchShippingCountries(id);
+    fetchShippingCountries(checkoutToken.id);
   }, []);
 
   useEffect(() => {
@@ -45,7 +45,7 @@ const AddressForm = ({ test }) => {
   }, [shippingCountry]);
 
   useEffect(() => {
-    if (shippingSubdivision) fetchShippingOptions(shippingCountry, shippingSubdivision);
+    if (shippingSubdivision) fetchShippingOptions(checkoutToken.id, shippingCountry, shippingSubdivision);
   }, [shippingSubdivision]);
 
   return (
