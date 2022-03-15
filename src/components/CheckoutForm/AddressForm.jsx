@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { InputLabel, Select, MenuItem, Button, Grid, Typography } from '@material-ui/core';
-import { useForm, FormProvider, CheckoutTokenId, ShippingCountry } from 'react-hook-form';
+import { useForm, FormProvider, CheckoutTokenId } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
 import { commerce } from '../../lib/commerce';
@@ -62,13 +62,13 @@ const AddressForm = ({ checkoutToken, test }) => {
             <FormInput required name="zip" label="Zip / Postal code" />
             <Grid item xs={12} sm={6}>
               <InputLabel>Shipping Country</InputLabel>
-              <ShippingCountry value={shippingCountry} fullWidth onChange={(e) => setShippingCountry(e.target.value)}>
+              <Select value={shippingCountry} fullWidth onChange={(e) => setShippingCountry(e.target.value)}>
                 {Object.entries(shippingCountries).map(([code, name]) => ({ id: code, label: name })).map((item) => (
-                  <MenuItem key={item.id} value={item.id}>
+                  <MenuItem key={item.id} value={item.id}>  
                     {item.label}
                   </MenuItem>
-                ))}
-              </ShippingCountry>
+              </Select>
+                ))}         
             </Grid>
             <Grid item xs={12} sm={6}>
               <InputLabel>Shipping Subdivision</InputLabel>
