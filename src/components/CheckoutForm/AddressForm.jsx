@@ -62,7 +62,6 @@ const AddressForm = ({ checkoutToken, test }) => {
             <FormInput required name="zip" label="Zip / Postal code" />
             <Grid item xs={12} sm={6}>
               <InputLabel>Shipping Country</InputLabel>
-              <div className="shipping">
               <Select value={shippingCountry} fullWidth onChange={(e) => setShippingCountry(e.target.value)}>
                 {Object.entries(shippingCountries).map(([code, name]) => ({ id: code, label: name })).map((item) => (
                   <MenuItem key={item.id} value={item.id}>
@@ -70,11 +69,9 @@ const AddressForm = ({ checkoutToken, test }) => {
                   </MenuItem>
                 ))}
               </Select>
-              </div>
             </Grid>
             <Grid item xs={12} sm={6}>
               <InputLabel>Shipping Subdivision</InputLabel>
-              <div>
               <Select value={shippingSubdivision} fullWidth onChange={(e) => setShippingSubdivision(e.target.value)}>
                 {Object.entries(shippingSubdivisions).map(([code, name]) => ({ id: code, label: name })).map((item) => (
                   <MenuItem key={item.id} value={item.id}>
@@ -82,11 +79,9 @@ const AddressForm = ({ checkoutToken, test }) => {
                   </MenuItem>
                 ))}
               </Select>
-              </div>
             </Grid>
             <Grid item xs={12} sm={6}>
               <InputLabel>Shipping Options</InputLabel>
-              <div className="options">
               <Select value={shippingOption} fullWidth onChange={(e) => setShippingOption(e.target.value)}>
                 {shippingOptions.map((sO) => ({ id: sO.id, label: `${sO.description} - (${sO.price.formatted_with_symbol})` })).map((item) => (
                   <MenuItem key={item.id} value={item.id}>
@@ -94,7 +89,6 @@ const AddressForm = ({ checkoutToken, test }) => {
                   </MenuItem>
                 ))}
               </Select>
-              </div>
             </Grid>
           </Grid>
           <br />
