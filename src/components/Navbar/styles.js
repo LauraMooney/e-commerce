@@ -1,5 +1,4 @@
 import { makeStyles, fade } from '@material-ui/core/styles';
-import { CenterFocusStrong } from '@material-ui/icons';
 
 const drawerWidth = 2;
 

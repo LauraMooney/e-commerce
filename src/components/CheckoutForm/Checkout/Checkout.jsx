@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CssBaseline, Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider, Button } from '@material-ui/core';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, activeStep, history } from 'react-router-dom';
 
 import { commerce } from '../../../lib/commerce';
 import AddressForm from '../AddressForm';
