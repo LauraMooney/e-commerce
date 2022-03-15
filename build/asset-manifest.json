@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/static/js/main.5b2852f1.js",
+    "static/media/header.png": "/static/media/header.040875b2dc8739a42c52.png",
+    "static/media/footer.png": "/static/media/footer.4d619a364cb0f1b9126b.png",
+    "static/media/tiger rose logo.png": "/static/media/tiger rose logo.9ce5abed064c36ad1303.png",
+    "index.html": "/index.html",
+    "main.5b2852f1.js.map": "/static/js/main.5b2852f1.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.5b2852f1.js"
+  ]
+}
